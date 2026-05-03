@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <linearGradient id="mg1" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#34D399"/>
+      <stop offset="1" stop-color="#14B8A6"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="#F0FDF4"/>
+  <!-- phone frame -->
+  <rect x="290" y="40" width="220" height="520" rx="36" fill="#0B1B3B"/>
+  <rect x="302" y="58" width="196" height="484" rx="26" fill="#FFFFFF"/>
+  <!-- notch -->
+  <rect x="370" y="68" width="60" height="12" rx="6" fill="#0B1B3B"/>
+  <!-- header gradient -->
+  <path d="M 302 100 L 498 100 L 498 200 Q 498 220 478 220 L 322 220 Q 302 220 302 200 Z" fill="url(#mg1)"/>
+  <rect x="320" y="120" width="60" height="8" rx="4" fill="#FFFFFF" opacity="0.7"/>
+  <rect x="320" y="138" width="120" height="14" rx="4" fill="#FFFFFF"/>
+  <rect x="320" y="162" width="80" height="8" rx="4" fill="#FFFFFF" opacity="0.7"/>
+  <!-- task list cards -->
+  <g>
+    <rect x="320" y="240" width="160" height="46" rx="10" fill="#F8FAFC"/>
+    <circle cx="338" cy="263" r="9" fill="#FFFFFF" stroke="#14B8A6" stroke-width="2"/>
+    <path d="M 333 263 l 4 4 l 7 -8" stroke="#14B8A6" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <rect x="358" y="252" width="100" height="8" rx="4" fill="#0B1B3B"/>
+    <rect x="358" y="266" width="60" height="6" rx="3" fill="#94A3B8"/>
+  </g>
+  <g>
+    <rect x="320" y="296" width="160" height="46" rx="10" fill="#F8FAFC"/>
+    <circle cx="338" cy="319" r="9" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2"/>
+    <rect x="358" y="308" width="110" height="8" rx="4" fill="#0B1B3B"/>
+    <rect x="358" y="322" width="50" height="6" rx="3" fill="#94A3B8"/>
+  </g>
+  <g>
+    <rect x="320" y="352" width="160" height="46" rx="10" fill="#F8FAFC"/>
+    <circle cx="338" cy="375" r="9" fill="#FFFFFF" stroke="#14B8A6" stroke-width="2"/>
+    <path d="M 333 375 l 4 4 l 7 -8" stroke="#14B8A6" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <rect x="358" y="364" width="90" height="8" rx="4" fill="#0B1B3B"/>
+    <rect x="358" y="378" width="70" height="6" rx="3" fill="#94A3B8"/>
+  </g>
+  <g>
+    <rect x="320" y="408" width="160" height="46" rx="10" fill="#F8FAFC"/>
+    <circle cx="338" cy="431" r="9" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2"/>
+    <rect x="358" y="420" width="120" height="8" rx="4" fill="#0B1B3B"/>
+    <rect x="358" y="434" width="60" height="6" rx="3" fill="#94A3B8"/>
+  </g>
+  <!-- floating add button -->
+  <circle cx="460" cy="500" r="22" fill="url(#mg1)"/>
+  <rect x="455" y="490" width="10" height="20" rx="2" fill="#FFFFFF"/>
+  <rect x="450" y="495" width="20" height="10" rx="2" fill="#FFFFFF"/>
+  <!-- home indicator -->
+  <rect x="370" y="538" width="60" height="4" rx="2" fill="#0B1B3B"/>
+  <!-- decorative right card -->
+  <rect x="540" y="120" width="200" height="120" rx="14" fill="#FFFFFF" opacity="0.9"/>
+  <rect x="560" y="140" width="80" height="8" rx="4" fill="#0B1B3B"/>
+  <rect x="560" y="158" width="160" height="6" rx="3" fill="#94A3B8"/>
+  <rect x="560" y="172" width="120" height="6" rx="3" fill="#94A3B8"/>
+  <rect x="560" y="200" width="80" height="22" rx="11" fill="url(#mg1)"/>
+  <rect x="540" y="260" width="200" height="120" rx="14" fill="#FFFFFF" opacity="0.9"/>
+  <rect x="560" y="280" width="100" height="8" rx="4" fill="#0B1B3B"/>
+  <rect x="560" y="298" width="160" height="6" rx="3" fill="#94A3B8"/>
+  <rect x="560" y="312" width="140" height="6" rx="3" fill="#94A3B8"/>
+  <rect x="560" y="340" width="120" height="22" rx="11" fill="#F1F5F9"/>
+  <!-- left card -->
+  <rect x="60" y="180" width="200" height="100" rx="14" fill="#FFFFFF" opacity="0.9"/>
+  <rect x="80" y="200" width="80" height="8" rx="4" fill="#0B1B3B"/>
+  <rect x="80" y="218" width="160" height="6" rx="3" fill="#94A3B8"/>
+  <rect x="80" y="232" width="100" height="6" rx="3" fill="#94A3B8"/>
+  <rect x="80" y="252" width="60" height="20" rx="10" fill="url(#mg1)"/>
+  <rect x="60" y="300" width="200" height="100" rx="14" fill="#FFFFFF" opacity="0.9"/>
+  <rect x="80" y="320" width="100" height="8" rx="4" fill="#0B1B3B"/>
+  <rect x="80" y="338" width="160" height="6" rx="3" fill="#94A3B8"/>
+  <rect x="80" y="352" width="120" height="6" rx="3" fill="#94A3B8"/>
+</svg>

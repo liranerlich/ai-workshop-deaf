@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <linearGradient id="hg1" x1="0" x2="1">
+      <stop offset="0" stop-color="#FBBF24"/>
+      <stop offset="1" stop-color="#F472B6"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="#FFF7ED"/>
+  <!-- browser chrome -->
+  <rect x="40" y="40" width="720" height="36" rx="10" fill="#E2E8F0"/>
+  <circle cx="62" cy="58" r="6" fill="#FCA5A5"/>
+  <circle cx="82" cy="58" r="6" fill="#FCD34D"/>
+  <circle cx="102" cy="58" r="6" fill="#86EFAC"/>
+  <rect x="40" y="76" width="720" height="484" fill="#FFFFFF"/>
+  <!-- header -->
+  <rect x="80" y="110" width="160" height="20" rx="6" fill="#0B1B3B"/>
+  <rect x="80" y="138" width="240" height="8" rx="4" fill="#94A3B8"/>
+  <!-- summary card -->
+  <rect x="80" y="170" width="640" height="120" rx="16" fill="url(#hg1)"/>
+  <rect x="100" y="190" width="80" height="8" rx="4" fill="#FFFFFF" opacity="0.7"/>
+  <rect x="100" y="210" width="200" height="32" rx="6" fill="#FFFFFF"/>
+  <rect x="100" y="252" width="120" height="8" rx="4" fill="#FFFFFF" opacity="0.7"/>
+  <!-- mini chart -->
+  <g transform="translate(540 200)">
+    <polyline points="0,60 20,40 40,50 60,20 80,30 100,10 120,20 140,5"
+              fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
+  </g>
+  <!-- categories -->
+  <g>
+    <rect x="80" y="310" width="200" height="100" rx="14" fill="#F8FAFC"/>
+    <circle cx="110" cy="345" r="18" fill="#FBBF24" opacity="0.25"/>
+    <text x="110" y="352" text-anchor="middle" font-family="Arial" font-size="20">🛒</text>
+    <rect x="140" y="332" width="100" height="10" rx="5" fill="#0B1B3B"/>
+    <rect x="140" y="350" width="60" height="8" rx="4" fill="#94A3B8"/>
+    <rect x="100" y="380" width="160" height="10" rx="5" fill="#FBBF24"/>
+  </g>
+  <g>
+    <rect x="300" y="310" width="200" height="100" rx="14" fill="#F8FAFC"/>
+    <circle cx="330" cy="345" r="18" fill="#34D399" opacity="0.25"/>
+    <text x="330" y="352" text-anchor="middle" font-family="Arial" font-size="20">🏠</text>
+    <rect x="360" y="332" width="100" height="10" rx="5" fill="#0B1B3B"/>
+    <rect x="360" y="350" width="60" height="8" rx="4" fill="#94A3B8"/>
+    <rect x="320" y="380" width="120" height="10" rx="5" fill="#34D399"/>
+  </g>
+  <g>
+    <rect x="520" y="310" width="200" height="100" rx="14" fill="#F8FAFC"/>
+    <circle cx="550" cy="345" r="18" fill="#60A5FA" opacity="0.25"/>
+    <text x="550" y="352" text-anchor="middle" font-family="Arial" font-size="20">🚗</text>
+    <rect x="580" y="332" width="100" height="10" rx="5" fill="#0B1B3B"/>
+    <rect x="580" y="350" width="60" height="8" rx="4" fill="#94A3B8"/>
+    <rect x="540" y="380" width="100" height="10" rx="5" fill="#60A5FA"/>
+  </g>
+  <!-- recent transactions -->
+  <rect x="80" y="430" width="640" height="110" rx="14" fill="#F8FAFC"/>
+  <rect x="100" y="450" width="120" height="10" rx="5" fill="#0B1B3B"/>
+  <g>
+    <rect x="100" y="475" width="600" height="20" rx="6" fill="#FFFFFF"/>
+    <rect x="115" y="481" width="100" height="8" rx="4" fill="#0B1B3B"/>
+    <rect x="600" y="481" width="80" height="8" rx="4" fill="#FBBF24"/>
+  </g>
+  <g>
+    <rect x="100" y="500" width="600" height="20" rx="6" fill="#FFFFFF"/>
+    <rect x="115" y="506" width="120" height="8" rx="4" fill="#0B1B3B"/>
+    <rect x="600" y="506" width="80" height="8" rx="4" fill="#34D399"/>
+  </g>
+</svg>
