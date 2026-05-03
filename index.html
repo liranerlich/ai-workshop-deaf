@@ -618,6 +618,61 @@ nav .wrap{
 .fit-cta .arr{font-size:22px;font-weight:300}
 
 /* ────────────────────────────────────────────────────────────────
+   VALUE / INVESTMENT
+   ──────────────────────────────────────────────────────────────── */
+.value-card{
+  background:linear-gradient(135deg, var(--bg-2), #06060c);
+  border:1px solid var(--line-2);
+  border-radius:24px;
+  padding:48px 36px;
+  position:relative;overflow:hidden;
+}
+.value-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(to left, transparent, var(--lime), transparent);
+  opacity:.6;
+}
+.value-grid{
+  display:grid;grid-template-columns:1fr;gap:28px;align-items:center;text-align:center;
+}
+@media (min-width:800px){
+  .value-grid{grid-template-columns:1fr auto 1.5fr;gap:40px;text-align:right}
+}
+.value-label{
+  font-family:'JetBrains Mono',monospace;font-size:13px;
+  color:var(--mute);letter-spacing:.18em;margin-bottom:10px;text-transform:uppercase;
+}
+.value-label.lime{color:var(--lime)}
+.value-strike{
+  font-family:'JetBrains Mono',monospace;
+  font-size:clamp(44px, 6.5vw, 72px);
+  font-weight:800;color:var(--mute);
+  text-decoration:line-through;
+  text-decoration-color:var(--pink);
+  text-decoration-thickness:4px;
+  letter-spacing:-0.03em;
+  direction:ltr;
+  line-height:1;
+}
+.value-arrow{
+  display:none;font-size:38px;color:var(--lime);font-weight:300;
+  text-align:center;line-height:1;opacity:.85;
+}
+@media (min-width:800px){
+  .value-arrow{display:block;transform:rotate(0deg)}
+}
+.value-special-h{
+  font-size:clamp(26px, 3.2vw, 38px);
+  font-weight:800;color:var(--ink);letter-spacing:-0.02em;line-height:1.2;
+  text-wrap:balance;
+}
+.value-special-h em{font-style:normal;color:var(--lime)}
+.value-detail{
+  margin-top:10px;font-size:17px;color:var(--mute);line-height:1.55;
+}
+.value-detail strong{color:var(--ink);font-weight:600}
+
+/* ────────────────────────────────────────────────────────────────
    CTA
    ──────────────────────────────────────────────────────────────── */
 .cta{background:var(--lime);color:#0a0a14;border-top:1px solid #0a0a14}
@@ -1249,6 +1304,34 @@ nav .wrap > *, .cta .wrap > *, footer .wrap > *,
           <li>אתם רוצים תעודה — לא תוצר</li>
         </ul>
       </article>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     SECTION 09 — VALUE / INVESTMENT
+     ═══════════════════════════════════════════════════════════════ -->
+<section id="value">
+  <div class="wrap">
+    <div class="s-head">
+      <div class="eyebrow">09 · השקעה</div>
+      <h2 class="s-title">ערך הסדנה — <em>שקוף וקדם.</em></h2>
+      <p class="s-sub">בלי הסתרות, בלי טקטיקות מכירה. ערך הסדנה הוא <strong>9,000 ש״ח</strong> — אבל לקהילת החירשים וכבדי השמיעה שמורה הצעה מיוחדת.</p>
+    </div>
+
+    <div class="value-card">
+      <div class="value-grid">
+        <div>
+          <div class="value-label">ערך הסדנה</div>
+          <div class="value-strike">₪ 9,000</div>
+        </div>
+        <div class="value-arrow" aria-hidden>←</div>
+        <div>
+          <div class="value-label lime">מחיר מיוחד לקהילה</div>
+          <h3 class="value-special-h">מחיר ייעודי לחירשים וכבדי שמיעה — <em>שיוצג בשיחת ייעוץ אישית.</em></h3>
+          <p class="value-detail">בלי טפסים ובלי לחץ. שיחה קצרה בוואטסאפ, מבינים מה מתאים לכם — ואז שולחים את הפרטים המלאים.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
