@@ -405,26 +405,55 @@ nav .wrap{
 .com-svg{width:100%;max-width:400px;height:auto}
 
 /* ────────────────────────────────────────────────────────────────
-   PROCESS
+   PROCESS — flow bubbles
    ──────────────────────────────────────────────────────────────── */
-.proc-list{border-top:1px solid var(--line)}
-.proc-row{
-  display:grid;grid-template-columns:120px 1fr;gap:20px;
-  padding:32px 0;border-bottom:1px solid var(--line);
-  transition:padding-right .3s ease;
-  align-items:start;
+.flow-grid{
+  display:grid;grid-template-columns:1fr;gap:24px;align-items:stretch;
 }
-.proc-row:hover{padding-right:16px}
-@media (min-width:800px){
-  .proc-row{grid-template-columns:140px 320px 1fr;gap:32px;padding:40px 0;align-items:center}
+@media (min-width:900px){
+  .flow-grid{
+    grid-template-columns:1fr auto 1fr auto 1fr;
+    gap:18px;
+  }
 }
-.proc-num{
-  font-family:'JetBrains Mono',monospace;font-weight:700;color:var(--lime);
-  font-size:17px;border-right:1px solid var(--lime);padding-right:14px;
-  letter-spacing:.04em;white-space:nowrap;
+.flow-bubble{
+  background:var(--bg-2);border:1px solid var(--line-2);
+  border-radius:28px;padding:36px 32px;
+  display:flex;flex-direction:column;gap:16px;
+  position:relative;overflow:hidden;
+  transition:transform .3s ease, border-color .3s ease, box-shadow .3s ease;
 }
-.proc-h{font-size:clamp(28px, 3vw, 40px);font-weight:800;letter-spacing:-0.02em;line-height:1.15}
-.proc-d{font-size:19px;color:var(--mute);line-height:1.6}
+.flow-bubble::before{
+  content:'';position:absolute;inset:0;border-radius:28px;
+  background:radial-gradient(circle at 30% 20%, rgba(199,255,60,0.06), transparent 60%);
+  opacity:0;transition:opacity .35s ease;pointer-events:none;
+}
+.flow-bubble:hover{
+  border-color:rgba(199,255,60,0.45);
+  transform:translateY(-3px);
+  box-shadow:0 18px 50px -20px rgba(199,255,60,0.25);
+}
+.flow-bubble:hover::before{opacity:1}
+.flow-dot{
+  width:14px;height:14px;border-radius:50%;background:var(--lime);
+  box-shadow:0 0 16px rgba(199,255,60,0.55);
+  position:relative;z-index:1;
+}
+.flow-h{
+  font-size:clamp(24px, 2.5vw, 30px);font-weight:800;letter-spacing:-0.02em;
+  line-height:1.2;color:var(--ink);position:relative;z-index:1;
+}
+.flow-d{
+  font-size:17px;color:var(--mute);line-height:1.6;position:relative;z-index:1;
+}
+.flow-arrow{
+  align-self:center;justify-self:center;font-size:28px;color:var(--lime);
+  opacity:.7;font-weight:300;line-height:1;
+  transform:rotate(90deg);
+}
+@media (min-width:900px){
+  .flow-arrow{transform:rotate(0deg);font-size:32px}
+}
 
 /* ────────────────────────────────────────────────────────────────
    DELIVERABLES (what you walk out with)
@@ -1042,26 +1071,28 @@ nav .wrap > *, .cta .wrap > *, footer .wrap > *,
   <div class="wrap">
     <div class="s-head">
       <div class="eyebrow">04 · המהלך</div>
-      <h2 class="s-title">שלושה מפגשים. <em>מסע אחד.</em></h2>
-      <p class="s-sub">מתחילים מרעיון, מסיימים עם תוצר עובד. כל מפגש דוחף אתכם שלב אחד קדימה — בלי בלבולים.</p>
+      <h2 class="s-title">שלוש תחנות. <em>זרימה אחת.</em></h2>
+      <p class="s-sub">מתחילים מרעיון, ממשיכים בבנייה, מסיימים עם מערכת שעובדת — בזרימה ברורה, בלי בלבולים.</p>
     </div>
 
-    <div class="proc-list">
-      <div class="proc-row">
-        <div class="proc-num">מפגש 01</div>
-        <h3 class="proc-h">מרעיון לתוכנית</h3>
-        <p class="proc-d">מתחילים מהרעיון שלכם ומפנים לו צורה של תוכנית מסודרת — מי המשתמש, מה הצורך, אילו מסכים נדרשים ואיך הזרימה נראית. יוצאים עם בלופרינט ברור ומוכן לבנייה.</p>
-      </div>
-      <div class="proc-row">
-        <div class="proc-num">מפגש 02</div>
-        <h3 class="proc-h">בנייה עם כלי AI</h3>
-        <p class="proc-d">נכיר ונשתמש בכלי AI שונים, כל אחד לפי החוזק שלו. לא רצים על כל הכלים בבת אחת — לוקחים את הזמן להפעיל ולהבין כל אחד על הפרויקט שלכם.</p>
-      </div>
-      <div class="proc-row">
-        <div class="proc-num">מפגש 03</div>
-        <h3 class="proc-h">שילוב, אוטומציה והמשך</h3>
-        <p class="proc-d">מחברים את הכלים לזרימת עבודה אחת. רואים איך כשהם עובדים יחד הם נותנים ערך גדול בהרבה מאשר לבד — ויוצאים עם תשתית שאפשר להמשיך לפתח גם אחרי הסדנה.</p>
-      </div>
+    <div class="flow-grid">
+      <article class="flow-bubble">
+        <div class="flow-dot"></div>
+        <h3 class="flow-h">מרעיון לתוכנית</h3>
+        <p class="flow-d">מתחילים מהרעיון שלכם ומפנים לו צורה של תוכנית מסודרת — מי המשתמש, מה הצורך, אילו מסכים נדרשים ואיך הזרימה נראית. יוצאים עם בלופרינט ברור ומוכן לבנייה.</p>
+      </article>
+      <div class="flow-arrow" aria-hidden>←</div>
+      <article class="flow-bubble">
+        <div class="flow-dot"></div>
+        <h3 class="flow-h">בנייה עם כלי AI</h3>
+        <p class="flow-d">נכיר ונשתמש בכלי AI שונים, כל אחד לפי החוזק שלו. לא רצים על כל הכלים בבת אחת — לוקחים את הזמן להפעיל ולהבין כל אחד על הפרויקט שלכם.</p>
+      </article>
+      <div class="flow-arrow" aria-hidden>←</div>
+      <article class="flow-bubble">
+        <div class="flow-dot"></div>
+        <h3 class="flow-h">שילוב, אוטומציה והמשך</h3>
+        <p class="flow-d">מחברים את הכלים לזרימת עבודה אחת. רואים איך כשהם עובדים יחד הם נותנים ערך גדול בהרבה מאשר לבד — ויוצאים עם תשתית שאפשר להמשיך לפתח גם אחרי הסדנה.</p>
+      </article>
     </div>
   </div>
 </section>
