@@ -85,9 +85,10 @@ nav .wrap{
 }
 .brand{display:flex;align-items:center;gap:12px}
 .logo{
-  width:38px;height:38px;border:1.5px solid var(--lime);border-radius:6px;
+  width:46px;height:38px;border:1.5px solid var(--lime);border-radius:6px;
   display:grid;place-items:center;position:relative;
   font-family:'JetBrains Mono',monospace;font-weight:700;font-size:13px;color:var(--lime);
+  letter-spacing:-0.02em;
 }
 .logo::before,.logo::after{
   content:'';position:absolute;width:6px;height:6px;
@@ -278,26 +279,35 @@ nav .wrap{
   font-size:9px;color:var(--lime);letter-spacing:.15em;text-transform:uppercase;
 }
 .m-landing-h{font-size:14px;color:var(--ink);font-family:'Heebo',sans-serif;font-weight:700;line-height:1.2}
-.m-landing-btns{display:flex;gap:6px;margin-top:4px}
+.m-landing-sub{font-size:9px;color:var(--mute);font-family:'Heebo',sans-serif;line-height:1.4}
+.m-landing-btns{display:flex;gap:6px;margin-top:2px}
 .m-landing-btn{padding:5px 10px;border-radius:999px;font-size:9px;font-family:'Heebo',sans-serif}
 .m-landing-btn.lime{background:var(--lime);color:#0a0a14;font-weight:600}
 .m-landing-btn.ghost{border:1px solid var(--line-2);color:var(--ink)}
-.m-landing-grid{
-  display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:auto;
+.m-landing-feat{
+  margin-top:auto;display:grid;gap:4px;padding-top:8px;
+  border-top:1px solid var(--line);
 }
-.m-landing-grid > div{aspect-ratio:1;background:rgba(255,255,255,0.05);border-radius:4px}
-.m-landing-grid > div.lime{background:var(--lime)}
+.m-landing-feat-row{
+  display:flex;align-items:center;gap:6px;font-size:9px;color:var(--ink);font-family:'Heebo',sans-serif;
+}
+.m-landing-feat-row .dot{width:5px;height:5px;border-radius:50%;background:var(--lime);flex-shrink:0}
 
 /* ── Mock #2 DASHBOARD ── */
-.m-dash-chips{display:flex;gap:6px}
-.m-dash-chips span{padding:3px 10px;border-radius:999px;font-size:9px;border:1px solid var(--line-2);color:var(--mute)}
+.m-dash-chips{display:flex;gap:6px;font-family:'Heebo',sans-serif}
+.m-dash-chips span{padding:3px 10px;border-radius:999px;font-size:10px;border:1px solid var(--line-2);color:var(--mute)}
 .m-dash-chips span.on{background:var(--lime);color:#0a0a14;border-color:var(--lime);font-weight:700}
-.m-dash-kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
-.m-dash-kpi{background:rgba(255,255,255,0.03);border:1px solid var(--line);border-radius:6px;padding:8px}
-.m-dash-kpi-l{font-size:9px;color:var(--mute);letter-spacing:.1em}
-.m-dash-kpi-v{font-size:14px;color:var(--lime);font-weight:700;margin-top:2px}
-.m-dash-bars{display:flex;align-items:flex-end;gap:3px;flex:1;margin-top:4px;min-height:50px}
-.m-dash-bars span{flex:1;background:var(--lime);border-radius:2px 2px 0 0;min-height:8px}
+.m-dash-feat{
+  background:rgba(199,255,60,0.06);border:1px solid rgba(199,255,60,0.2);
+  border-radius:8px;padding:10px 12px;
+}
+.m-dash-feat-l{font-size:9px;color:var(--mute);font-family:'Heebo',sans-serif}
+.m-dash-feat-v{font-size:20px;color:var(--lime);font-weight:800;letter-spacing:-0.02em;margin-top:2px;font-family:'JetBrains Mono',monospace;direction:ltr;text-align:right}
+.m-dash-feat-d{font-size:9px;color:#86EFAC;font-family:'Heebo',sans-serif;margin-top:2px}
+.m-dash-bars{display:flex;align-items:flex-end;gap:3px;flex:1;margin-top:auto;min-height:42px}
+.m-dash-bars span{flex:1;background:var(--lime);border-radius:2px 2px 0 0;min-height:6px;opacity:.85}
+.m-dash-bars span.peak{opacity:1}
+.m-dash-axis{display:flex;justify-content:space-between;font-size:8px;color:var(--mute);font-family:'Heebo',sans-serif;margin-top:2px}
 
 /* ── Mock #3 APP (phone) ── */
 .m-app-frame{
@@ -610,6 +620,41 @@ nav .wrap{
 .wa-arrow{grid-column:2;grid-row:1/4;font-size:32px;font-weight:300;align-self:center;color:var(--lime);transition:color .25s}
 
 /* ────────────────────────────────────────────────────────────────
+   META CALLOUT (built with the same tools we teach)
+   ──────────────────────────────────────────────────────────────── */
+.meta-cta{
+  background:var(--bg);border-top:1px solid var(--line-2);position:relative;
+  padding:56px 0;
+}
+.meta-cta::before{
+  content:'';position:absolute;inset-inline:0;top:-1px;height:2px;
+  background:linear-gradient(to left, transparent, var(--lime), transparent);
+  opacity:.5;
+}
+.meta-cta-inner{
+  display:flex;flex-direction:column;gap:24px;align-items:flex-start;
+}
+@media (min-width:800px){
+  .meta-cta-inner{flex-direction:row;justify-content:space-between;align-items:center;gap:32px}
+}
+.meta-cta-tag{
+  font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--lime);
+  letter-spacing:.2em;text-transform:uppercase;margin-bottom:10px;
+}
+.meta-cta-h{
+  font-size:clamp(24px, 3vw, 36px);font-weight:800;letter-spacing:-0.025em;
+  line-height:1.2;text-wrap:balance;color:var(--ink);
+}
+.meta-cta-h em{font-style:normal;color:var(--lime)}
+.meta-cta-btn{
+  display:inline-flex;align-items:center;gap:10px;flex-shrink:0;
+  background:var(--lime);color:#0a0a14;
+  padding:16px 28px;border-radius:999px;font-weight:700;font-size:18px;
+  transition:transform .2s ease, box-shadow .2s ease;
+}
+.meta-cta-btn:hover{transform:translateY(-2px);box-shadow:0 16px 40px -12px rgba(199,255,60,0.55)}
+
+/* ────────────────────────────────────────────────────────────────
    FOOTER
    ──────────────────────────────────────────────────────────────── */
 footer{background:var(--bg);border-top:1px solid var(--line)}
@@ -665,7 +710,7 @@ nav .wrap > *, .cta .wrap > *, footer .wrap > *,
 <nav>
   <div class="wrap">
     <div class="brand">
-      <div class="logo">A·D</div>
+      <div class="logo">R + E</div>
       <div class="brand-name">סדנת AI מונגשת</div>
     </div>
     <div class="nav-mid">
@@ -745,12 +790,17 @@ nav .wrap > *, .cta .wrap > *, footer .wrap > *,
       <!-- 1. LANDING -->
       <article class="show-card">
         <div class="mockup">
-          <div class="bbar"><div class="bbar-dots"><span></span><span></span><span></span></div><div class="bbar-url">studio.tlv</div></div>
+          <div class="bbar"><div class="bbar-dots"><span></span><span></span><span></span></div><div class="bbar-url">shir-photo.co.il</div></div>
           <div class="mock-body">
-            <div class="m-landing-label">// LAUNCH</div>
-            <div class="m-landing-h">עיצוב שמרגיש בבית</div>
-            <div class="m-landing-btns"><span class="m-landing-btn lime">הרשמה</span><span class="m-landing-btn ghost">פרטים</span></div>
-            <div class="m-landing-grid"><div></div><div class="lime"></div><div></div><div></div><div></div><div></div></div>
+            <div class="m-landing-label">// LIVE</div>
+            <div class="m-landing-h">צילומי הריון בטבע</div>
+            <div class="m-landing-sub">בוקרים בתל אביב · אחרי הצהריים בחוף</div>
+            <div class="m-landing-btns"><span class="m-landing-btn lime">קבעו פגישה</span><span class="m-landing-btn ghost">גלריה</span></div>
+            <div class="m-landing-feat">
+              <div class="m-landing-feat-row"><span class="dot"></span>זמן צילום: 90 דקות</div>
+              <div class="m-landing-feat-row"><span class="dot"></span>20 תמונות ערוכות</div>
+              <div class="m-landing-feat-row"><span class="dot"></span>גלריה אונליין לשיתוף</div>
+            </div>
           </div>
         </div>
         <div class="show-meta"><span class="show-meta-name">דף נחיתה</span><span class="show-meta-id">SC_01</span></div>
@@ -759,20 +809,21 @@ nav .wrap > *, .cta .wrap > *, footer .wrap > *,
       <!-- 2. DASHBOARD -->
       <article class="show-card">
         <div class="mockup">
-          <div class="bbar"><div class="bbar-dots"><span></span><span></span><span></span></div><div class="bbar-url">finance.dash</div></div>
+          <div class="bbar"><div class="bbar-dots"><span></span><span></span><span></span></div><div class="bbar-url">finance.dash / april</div></div>
           <div class="mock-body">
-            <div class="m-dash-chips"><span>7D</span><span class="on">30D</span><span>1Y</span></div>
-            <div class="m-dash-kpis">
-              <div class="m-dash-kpi"><div class="m-dash-kpi-l">REV</div><div class="m-dash-kpi-v">42K</div></div>
-              <div class="m-dash-kpi"><div class="m-dash-kpi-l">EXP</div><div class="m-dash-kpi-v">18K</div></div>
-              <div class="m-dash-kpi"><div class="m-dash-kpi-l">NET</div><div class="m-dash-kpi-v">24K</div></div>
+            <div class="m-dash-chips"><span>שבוע</span><span class="on">חודש</span><span>שנה</span></div>
+            <div class="m-dash-feat">
+              <div class="m-dash-feat-l">רווח נטו · אפריל</div>
+              <div class="m-dash-feat-v">₪ 24,180</div>
+              <div class="m-dash-feat-d">+18% מהחודש שעבר</div>
             </div>
             <div class="m-dash-bars">
-              <span style="height:40%"></span><span style="height:65%"></span><span style="height:30%"></span>
-              <span style="height:80%"></span><span style="height:55%"></span><span style="height:45%"></span>
-              <span style="height:70%"></span><span style="height:90%"></span><span style="height:50%"></span>
-              <span style="height:75%"></span><span style="height:35%"></span><span style="height:85%"></span>
+              <span style="height:35%"></span><span style="height:55%"></span><span style="height:42%"></span>
+              <span style="height:68%"></span><span style="height:48%"></span><span style="height:60%"></span>
+              <span style="height:72%"></span><span class="peak" style="height:92%"></span><span style="height:65%"></span>
+              <span style="height:78%"></span><span style="height:58%"></span><span style="height:88%"></span>
             </div>
+            <div class="m-dash-axis"><span>ינו</span><span>מרץ</span><span>מאי</span><span>יול</span><span>ספט</span><span>נוב</span></div>
           </div>
         </div>
         <div class="show-meta"><span class="show-meta-name">דשבורד נתונים</span><span class="show-meta-id">SC_02</span></div>
@@ -976,7 +1027,7 @@ nav .wrap > *, .cta .wrap > *, footer .wrap > *,
             </circle>
           </g>
           <circle cx="200" cy="200" r="38" fill="#C7FF3C"/>
-          <text x="200" y="208" text-anchor="middle" font-family="JetBrains Mono, monospace" font-weight="700" font-size="22" fill="#0a0a14">A·D</text>
+          <text x="200" y="208" text-anchor="middle" font-family="JetBrains Mono, monospace" font-weight="700" font-size="20" fill="#0a0a14" letter-spacing="-0.5">R + E</text>
         </svg>
       </div>
     </div>
@@ -1202,6 +1253,21 @@ nav .wrap > *, .cta .wrap > *, footer .wrap > *,
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════════
+     META CALLOUT — built with the same tools we teach
+     ═══════════════════════════════════════════════════════════════ -->
+<section class="meta-cta">
+  <div class="wrap">
+    <div class="meta-cta-inner">
+      <div>
+        <div class="meta-cta-tag">// META</div>
+        <h3 class="meta-cta-h">הדף הזה נבנה עם אותם הכלים שתלמדו בסדנה. <em>רוצים לדעת איך?</em></h3>
+      </div>
+      <a class="meta-cta-btn" href="#cta">השתתפו <span aria-hidden>←</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
      FOOTER
      ═══════════════════════════════════════════════════════════════ -->
 <footer>
@@ -1209,7 +1275,7 @@ nav .wrap > *, .cta .wrap > *, footer .wrap > *,
     <div class="foot-grid">
       <div>
         <div class="foot-brand">
-          <div class="logo">A·D</div>
+          <div class="logo">R + E</div>
           <div class="brand-name">סדנת AI מונגשת</div>
         </div>
         <p class="foot-desc">סדנה מעשית של שלושה מפגשים. בונים אתרים, אפליקציות ודשבורדים בעזרת כלי AI — בלי קוד, בקצב מותאם, ייעודית לקהילת החירשים וכבדי השמיעה.</p>
