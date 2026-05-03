@@ -409,18 +409,19 @@ nav .wrap{
    ──────────────────────────────────────────────────────────────── */
 .proc-list{border-top:1px solid var(--line)}
 .proc-row{
-  display:grid;grid-template-columns:80px 1fr;gap:20px;
+  display:grid;grid-template-columns:120px 1fr;gap:20px;
   padding:32px 0;border-bottom:1px solid var(--line);
   transition:padding-right .3s ease;
   align-items:start;
 }
 .proc-row:hover{padding-right:16px}
 @media (min-width:800px){
-  .proc-row{grid-template-columns:100px 320px 1fr;gap:32px;padding:40px 0;align-items:center}
+  .proc-row{grid-template-columns:140px 320px 1fr;gap:32px;padding:40px 0;align-items:center}
 }
 .proc-num{
   font-family:'JetBrains Mono',monospace;font-weight:700;color:var(--lime);
-  font-size:18px;border-right:1px solid var(--lime);padding-right:14px;
+  font-size:17px;border-right:1px solid var(--lime);padding-right:14px;
+  letter-spacing:.04em;white-space:nowrap;
 }
 .proc-h{font-size:clamp(28px, 3vw, 40px);font-weight:800;letter-spacing:-0.02em;line-height:1.15}
 .proc-d{font-size:19px;color:var(--mute);line-height:1.6}
@@ -1047,17 +1048,17 @@ nav .wrap > *, .cta .wrap > *, footer .wrap > *,
 
     <div class="proc-list">
       <div class="proc-row">
-        <div class="proc-num">01</div>
+        <div class="proc-num">מפגש 01</div>
         <h3 class="proc-h">מרעיון לתוכנית</h3>
         <p class="proc-d">מתחילים מהרעיון שלכם ומפנים לו צורה של תוכנית מסודרת — מי המשתמש, מה הצורך, אילו מסכים נדרשים ואיך הזרימה נראית. יוצאים עם בלופרינט ברור ומוכן לבנייה.</p>
       </div>
       <div class="proc-row">
-        <div class="proc-num">02</div>
+        <div class="proc-num">מפגש 02</div>
         <h3 class="proc-h">בנייה עם כלי AI</h3>
         <p class="proc-d">נכיר ונשתמש בכלי AI שונים, כל אחד לפי החוזק שלו. לא רצים על כל הכלים בבת אחת — לוקחים את הזמן להפעיל ולהבין כל אחד על הפרויקט שלכם.</p>
       </div>
       <div class="proc-row">
-        <div class="proc-num">03</div>
+        <div class="proc-num">מפגש 03</div>
         <h3 class="proc-h">שילוב, אוטומציה והמשך</h3>
         <p class="proc-d">מחברים את הכלים לזרימת עבודה אחת. רואים איך כשהם עובדים יחד הם נותנים ערך גדול בהרבה מאשר לבד — ויוצאים עם תשתית שאפשר להמשיך לפתח גם אחרי הסדנה.</p>
       </div>
