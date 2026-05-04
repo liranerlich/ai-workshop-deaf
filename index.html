@@ -618,13 +618,13 @@ nav .wrap{
 .fit-cta .arr{font-size:22px;font-weight:300}
 
 /* ────────────────────────────────────────────────────────────────
-   VALUE / INVESTMENT
+   VALUE / INVESTMENT — three-tier journey + deposit flow
    ──────────────────────────────────────────────────────────────── */
 .value-card{
   background:linear-gradient(135deg, var(--bg-2), #06060c);
   border:1px solid var(--line-2);
   border-radius:24px;
-  padding:48px 36px;
+  padding:48px 32px;
   position:relative;overflow:hidden;
 }
 .value-card::before{
@@ -632,45 +632,73 @@ nav .wrap{
   background:linear-gradient(to left, transparent, var(--lime), transparent);
   opacity:.6;
 }
-.value-grid{
-  display:grid;grid-template-columns:1fr;gap:28px;align-items:center;text-align:center;
+
+/* tiers row */
+.value-tiers{
+  display:grid;grid-template-columns:1fr;gap:14px;align-items:center;justify-items:center;
 }
-@media (min-width:800px){
-  .value-grid{grid-template-columns:1fr auto 1.5fr;gap:40px;text-align:right}
+@media (min-width:900px){
+  .value-tiers{
+    grid-template-columns:auto auto auto auto auto;
+    justify-content:center;gap:28px;
+  }
 }
-.value-label{
-  font-family:'JetBrains Mono',monospace;font-size:13px;
-  color:var(--mute);letter-spacing:.18em;margin-bottom:10px;text-transform:uppercase;
+.value-tier{display:flex;flex-direction:column;gap:8px;align-items:center;text-align:center}
+.value-tier-label{
+  font-family:'JetBrains Mono',monospace;font-size:11px;
+  color:var(--mute);letter-spacing:.18em;text-transform:uppercase;
 }
-.value-label.lime{color:var(--lime)}
-.value-strike{
-  font-family:'JetBrains Mono',monospace;
-  font-size:clamp(44px, 6.5vw, 72px);
-  font-weight:800;color:var(--mute);
+.value-tier-label.lime{color:var(--lime)}
+.value-tier-strike{
+  font-family:'JetBrains Mono',monospace;font-weight:700;
+  font-size:clamp(22px, 2.6vw, 28px);color:var(--mute);
   text-decoration:line-through;
   text-decoration-color:var(--pink);
-  text-decoration-thickness:4px;
-  letter-spacing:-0.03em;
-  direction:ltr;
-  line-height:1;
+  text-decoration-thickness:2.5px;
+  letter-spacing:-0.02em;direction:ltr;line-height:1;
+  opacity:.7;
 }
-.value-arrow{
-  display:none;font-size:38px;color:var(--lime);font-weight:300;
-  text-align:center;line-height:1;opacity:.85;
+.value-tier-final{
+  background:rgba(199,255,60,0.06);
+  border:1.5px solid rgba(199,255,60,0.45);
+  border-radius:14px;padding:20px 28px;gap:10px;
 }
-@media (min-width:800px){
-  .value-arrow{display:block;transform:rotate(0deg)}
+.value-tier-final-num{
+  font-family:'JetBrains Mono',monospace;font-weight:900;
+  font-size:clamp(38px, 5vw, 54px);color:var(--lime);
+  letter-spacing:-0.025em;direction:ltr;line-height:1;
+  text-shadow:0 0 30px rgba(199,255,60,0.35);
 }
-.value-special-h{
-  font-size:clamp(26px, 3.2vw, 38px);
-  font-weight:800;color:var(--ink);letter-spacing:-0.02em;line-height:1.2;
-  text-wrap:balance;
+.value-arrow-h{
+  color:var(--lime);opacity:.5;font-size:24px;font-weight:300;
+  text-align:center;line-height:1;
+  transform:rotate(-90deg);
 }
-.value-special-h em{font-style:normal;color:var(--lime)}
-.value-detail{
-  margin-top:10px;font-size:17px;color:var(--mute);line-height:1.55;
+@media (min-width:900px){
+  .value-arrow-h{transform:rotate(0deg);font-size:28px}
 }
-.value-detail strong{color:var(--ink);font-weight:600}
+
+/* deposit flow */
+.value-divider-line{height:1px;background:var(--line);margin:40px 0 28px}
+.value-flow-h{
+  font-size:20px;font-weight:800;color:var(--ink);
+  margin-bottom:20px;text-align:center;letter-spacing:-0.02em;
+}
+.value-steps{display:grid;grid-template-columns:1fr;gap:14px}
+@media (min-width:720px){.value-steps{grid-template-columns:repeat(3,1fr)}}
+.value-step{
+  background:rgba(255,255,255,0.02);
+  border:1px solid var(--line);border-radius:14px;padding:22px 20px;
+  display:flex;flex-direction:column;gap:8px;
+  transition:border-color .25s ease;
+}
+.value-step:hover{border-color:rgba(199,255,60,0.3)}
+.value-step-num{
+  font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--lime);
+  letter-spacing:.18em;
+}
+.value-step-h{font-size:18px;font-weight:800;color:var(--ink);letter-spacing:-0.02em;line-height:1.2}
+.value-step-d{font-size:15px;color:var(--mute);line-height:1.55}
 
 /* ────────────────────────────────────────────────────────────────
    CTA
@@ -1315,21 +1343,48 @@ nav .wrap > *, .cta .wrap > *, footer .wrap > *,
   <div class="wrap">
     <div class="s-head">
       <div class="eyebrow">09 · השקעה</div>
-      <h2 class="s-title">ערך הסדנה — <em>שקוף וקדם.</em></h2>
-      <p class="s-sub">בלי הסתרות, בלי טקטיקות מכירה. ערך הסדנה הוא <strong>7,500 ש״ח</strong> — אבל לקהילת החירשים וכבדי השמיעה שמורה הצעה מיוחדת.</p>
+      <h2 class="s-title">השקעה — <em>שקופה וקדימה.</em></h2>
+      <p class="s-sub">מהמחיר המלא של הסדנה ועד המחיר הסופי שלכם — שלוש שכבות, שקיפות מלאה, ומסלול הצטרפות שמכבד את שני הצדדים.</p>
     </div>
 
     <div class="value-card">
-      <div class="value-grid">
-        <div>
-          <div class="value-label">ערך הסדנה</div>
-          <div class="value-strike">₪ 7,500</div>
+      <!-- Three tiers -->
+      <div class="value-tiers">
+        <div class="value-tier">
+          <div class="value-tier-label">ערך מלא</div>
+          <div class="value-tier-strike">₪ 7,500</div>
         </div>
-        <div class="value-arrow" aria-hidden>←</div>
-        <div>
-          <div class="value-label lime">מחיר מיוחד לקהילה</div>
-          <h3 class="value-special-h">מחיר ייעודי לחירשים וכבדי שמיעה — <em>שיוצג בשיחת ייעוץ אישית.</em></h3>
-          <p class="value-detail">בלי טפסים ובלי לחץ. שיחה קצרה בוואטסאפ, מבינים מה מתאים לכם — ואז שולחים את הפרטים המלאים.</p>
+        <div class="value-arrow-h" aria-hidden>←</div>
+        <div class="value-tier">
+          <div class="value-tier-label">מחיר רגיל לסדנה</div>
+          <div class="value-tier-strike">₪ 4,300</div>
+        </div>
+        <div class="value-arrow-h" aria-hidden>←</div>
+        <div class="value-tier value-tier-final">
+          <div class="value-tier-label lime">מחיר השקה — מחזור 01</div>
+          <div class="value-tier-final-num">₪ 2,500</div>
+        </div>
+      </div>
+
+      <div class="value-divider-line"></div>
+
+      <!-- Deposit + qualification flow -->
+      <h3 class="value-flow-h">איך מצטרפים?</h3>
+      <div class="value-steps">
+        <div class="value-step">
+          <div class="value-step-num">// 01 — DEPOSIT</div>
+          <div class="value-step-h">₪ 500 מקדמה</div>
+          <div class="value-step-d">לשמירת מקום בקורס. בלי טפסים, בלי בירוקרטיה.</div>
+        </div>
+        <div class="value-step">
+          <div class="value-step-num">// 02 — INTERVIEW</div>
+          <div class="value-step-h">שיחת התאמה</div>
+          <div class="value-step-d">שיחה קצרה כדי לוודא שהסדנה באמת מתאימה לכם — ואתם לה.</div>
+        </div>
+        <div class="value-step">
+          <div class="value-step-num">// 03 — DECISION</div>
+          <div class="value-step-h">משלימים — או מוחזר</div>
+          <div class="value-step-d">אם מתקבלים, משלימים ל-₪2,500. אם לא, המקדמה מוחזרת במלואה.</div>
         </div>
       </div>
     </div>
