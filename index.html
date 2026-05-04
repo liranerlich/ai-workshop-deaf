@@ -603,8 +603,28 @@ nav .wrap{
 .fit-yes .fit-list li::before{color:var(--lime)}
 .fit-no .fit-list li::before{color:var(--pink);opacity:.7}
 
+.fit-bonus{
+  margin-top:8px;background:rgba(199,255,60,0.05);
+  border:1px dashed rgba(199,255,60,0.3);border-radius:12px;
+  padding:18px 20px;
+}
+.fit-bonus-h{
+  font-family:'JetBrains Mono',monospace;font-size:12px;
+  color:var(--lime);letter-spacing:.18em;text-transform:uppercase;
+  margin-bottom:12px;
+}
+.fit-bonus-list{list-style:none;display:grid;gap:10px}
+.fit-bonus-list li{
+  font-size:16px;color:var(--ink);line-height:1.45;
+  display:flex;gap:10px;align-items:flex-start;
+}
+.fit-bonus-list li::before{
+  content:'✓';color:var(--lime);font-weight:800;font-size:15px;
+  flex-shrink:0;line-height:1.5;
+}
+
 .fit-cta{
-  margin-top:8px;display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  margin-top:12px;display:inline-flex;align-items:center;justify-content:center;gap:10px;
   background:var(--lime);color:#0a0a14;
   padding:18px 26px;border-radius:12px;font-weight:800;font-size:19px;
   letter-spacing:-0.01em;line-height:1.2;
@@ -1316,6 +1336,17 @@ nav .wrap > *, .cta .wrap > *, footer .wrap > *,
           <li>אתם רוצים לצאת עם תוצר, לא עם רשימה</li>
           <li>אתם פתוחים ללמוד שיטה, לא לחקות הוראות</li>
         </ul>
+
+        <div class="fit-bonus">
+          <div class="fit-bonus-h">// בונוס למי שמתקבל</div>
+          <ul class="fit-bonus-list">
+            <li>קבוצה קטנה — תשומת לב אישית, לא הרצאה המונית</li>
+            <li>ערוץ וואטסאפ של הקבוצה לשאלות בין המפגשים</li>
+            <li>גישה לקהילת בוגרים להתייעצויות עתידיות</li>
+            <li>עדיפות הרשמה למחזורים הבאים</li>
+          </ul>
+        </div>
+
         <a class="fit-cta" href="#cta">אני מתאים. שמרו לי מקום <span class="arr">←</span></a>
       </article>
 
